@@ -38,7 +38,7 @@
   <nav>
     <span style="font-family: Bungee, sans-serif" ;>tweeter </span>
 
-    <div class="A">
+    <div class="a">
       Write a new tweet
       <i class="fa-solid fa-angles-down flag"></i>
     </div>
@@ -58,33 +58,16 @@
   <main class="container">
     <section class="new-tweet">
       <form class="tweetform" action="/tweets/" method="POST">
-        <div class="C">
-          <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
+        <div class="c">
+          <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
         </div>
-        <div class="B">
+        <div class="b">
           <button class="tweetbutton" type="submit">Tweet</button>
           <output name="counter" class="counter" for="tweet-text">140</output>
         </div>
 
         <section class="tweet-container">
-          <article>
-            <header class="newtonheader">
-              <div class="username"><img src="https://i.imgur.com/73hZDYK.png" alt="userimage">
-                Newton</div>
-              </div>
-              <div>@Sirlsaac</div>
-            </header>
 
-            If I have seen further, it is by standing on the shoulders of giants
-            <textarea name="text" id="tweet-text"></textarea>
-            <footer class="tweet-footer">
-              <div>295 years ago</div>
-              <div><i class="fa-solid fa-flag icon"></i><i class="fa-solid fa-retweet icon"></i><i
-                  class="fa-solid fa-heart icon"></i>
-              </div>
-            </footer>
-          </article>
         </section>
 
       </form>
