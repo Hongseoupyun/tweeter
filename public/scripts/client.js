@@ -1,9 +1,3 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-// Test / driver code (temporary). Eventually will get this from the server.
 
 $(document).ready(function () {
   const data = [
@@ -30,7 +24,7 @@ $(document).ready(function () {
       created_at: 1461113959088,
     },
   ];
-
+//returngin html template
   const createTweetElement = function (tweetObject) {
     const $tweet = $(`<article>
     <header class="newtonheader">
@@ -49,7 +43,7 @@ $(document).ready(function () {
     </article>`);
     return $tweet;
   };
-
+//loops through the tweets and calls createTweetElement to append the result to ".tweet-container " class
   const renderTweets = function (tweets) {
     for (let tweet of tweets) {
       let result = createTweetElement(tweet);
