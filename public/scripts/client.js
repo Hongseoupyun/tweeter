@@ -1,6 +1,5 @@
-
 $(document).ready(function () {
-  console.log("jquery ready at clinet.js")
+  console.log("jquery ready at clinet.js");
   const data = [
     {
       user: {
@@ -25,7 +24,7 @@ $(document).ready(function () {
       created_at: 1461113959088,
     },
   ];
-//returngin html template
+  //returngin html template
   const createTweetElement = function (tweetObject) {
     const $tweet = $(`<article>
     <header class="newtonheader">
@@ -44,7 +43,7 @@ $(document).ready(function () {
     </article>`);
     return $tweet;
   };
-//loops through the tweets and calls createTweetElement to append the result to ".tweet-container " class
+  //loops through the tweets and calls createTweetElement to append the result to ".tweet-container " class
   const renderTweets = function (tweets) {
     for (let tweet of tweets) {
       let result = createTweetElement(tweet);
@@ -52,21 +51,17 @@ $(document).ready(function () {
     }
   };
   renderTweets(data);
-
+//Ajax post request from .tweetform
   const $tweetForm = $(".tweetform");
+
   $tweetForm.submit(function (event) {
     event.preventDefault();
-    console.log("this-->",$(this).serialize())
     $.ajax({
       type: "POST",
       url: "http://localhost:8080/tweets/",
-      data:$(this).serialize()
-    })
-    .then(() => {
-      console.log("working!")
+      data: $(this).serialize(),
+    }).then(() => {
+      console.log("Tweet Submitted!");
     });
   });
-
-   
-
 });
