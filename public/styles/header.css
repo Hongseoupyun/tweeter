@@ -1,4 +1,4 @@
-header {
+.img {
   display: flex;
   height: 400px;
   justify-content: center;
@@ -7,9 +7,7 @@ header {
   background-color: #fcfcfc;
   background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
   z-index: -1;
-
 }
 .Name {
   display: flex;
-
 }
