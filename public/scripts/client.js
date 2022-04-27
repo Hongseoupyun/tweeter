@@ -51,4 +51,11 @@ $(document).ready(function () {
     }
   };
   renderTweets(data);
+
+   const $tweetForm = $(".tweetform")
+   $tweetForm.submit((event)=>{
+    event.preventDefault()
+
+   })
+
 });
