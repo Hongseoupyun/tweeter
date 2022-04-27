@@ -1,5 +1,6 @@
 
 $(document).ready(function () {
+  console.log("jquery ready at clinet.js")
   const data = [
     {
       user: {
@@ -52,10 +53,20 @@ $(document).ready(function () {
   };
   renderTweets(data);
 
-   const $tweetForm = $(".tweetform")
-   $tweetForm.submit((event)=>{
-    event.preventDefault()
+  const $tweetForm = $(".tweetform");
+  $tweetForm.submit(function (event) {
+    event.preventDefault();
+    console.log("this-->",$(this).serialize())
+    $.ajax({
+      type: "POST",
+      url: "http://localhost:8080/tweets/",
+      data:$(this).serialize()
+    })
+    .then(() => {
+      console.log("working!")
+    });
+  });
 
-   })
+   
 
 });
