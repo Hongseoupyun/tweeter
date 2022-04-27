@@ -1,15 +1,16 @@
-$(document).ready(function() {
-  
-   console.log("jquery ready")
-   
+$(document).ready(function () {
+  console.log("jquery ready");
 
-   $("#tweet-text").on("keyup",function(){
-    let counter = $(this).parent().next().children()[1]
-    let lengthOfText = $(this).val().length - 9
-    $(counter).val(140 - lengthOfText)
-
-    //console.log($(this).val())
-   
-  
-   })
+  $("#tweet-text").on("keyup", function () {
+    let counter = $(this).parent().next().children()[1];
+    let lengthOfText = $(this).val().length;
+    console.log(lengthOfText);
+    $(counter).val(140 - lengthOfText);
+    let newLength = $(counter).val();
+    if (newLength < 0) {
+      $(counter).css("color", "red");
+    } else {
+      $(counter).css("color", "#545149");
+    }
+  });
 });
