@@ -60,6 +60,8 @@
   <!-- Page-specific (main) content here -->
   <main class="container">
     <section class="new-tweet">
+      <div class="invisible" id="long">Your Tweet Is Too Long ..!</div>
+      <div class="invisible" id="empty">Your Tweet Is Empty..!</div>
       <form class="tweetform" action="/tweets" method="POST">
         <div class="c">
           <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>

@@ -38,23 +38,31 @@ $(document).ready(function () {
     event.preventDefault();
     const tweettext = $("#tweet-text").val();
     if (tweettext === null || tweettext === "") {
-      alert("Your tweet is empty!");
+      $("#empty").toggle(function () { $("#empty").removeClass("invisible"), $("#empty").addClass("error-empty"), $("#empty").slideDown() })
     } else if (tweettext.length > 140) {
-      alert("Your tweet is too long!");
+      $("#long").toggle(function () { $("#long").removeClass("invisible"), $("#long").addClass("error-empty"), $("#long").slideDown() })
     } else {
+      $("#long").toggle(function () { $("#long").removeClass("invisible"), $("#long").addClass("invisible") })
+      $("#empty").toggle(function () { $("#empty").removeClass("invisible"), $("#empty").addClass("invisible") })
+
       $.ajax("http://localhost:8080/tweets/", {
         method: "POST",
         data: $(this).serialize(),
       }).then(() => {
         console.log("Tweet Submitted!", $(this).serialize());
-        loadtweets();
       });
     }
   });
+
   // Ajax GET request
   const loadtweets = function () {
     $.ajax("/tweets", { method: "GET", success: renderTweets }).then(() => {
       console.log("GET success!");
     });
   };
+
+
+
+  loadtweets();
+
 });
