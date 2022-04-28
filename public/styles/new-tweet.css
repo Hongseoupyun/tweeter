@@ -41,7 +41,6 @@ textarea {
   flex-direction: column;
   font-family: SourceSansPro, sans-serif;
   background-color: beige;
-  border: 5px solid black;
   padding: 10px;
   margin: 20px;
 }
@@ -68,8 +67,18 @@ textarea {
 .icon:hover {
   color: red;
 }
-.tweet-container:hover {
+.tweet-container-item:hover {
   box-shadow: 5px 5px 0px 0px #289fed, 10px 10px 0px 0px #b6b29f,
     15px 15px 0px 0px #a1d8ff, 20px 20px 0px 0px #cae6ff,
     25px 25px 0px 0px #e1eeff, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+
+.tweet-container-item {
+  display: flex;
+  flex-direction: column;
+  font-family: SourceSansPro, sans-serif;
+  background-color: beige;
+  border: 5px solid black;
+  padding: 10px;
+  margin: 20px;
 }

@@ -1,9 +1,11 @@
+
 $(document).ready(function () {
+
   console.log("jquery ready at clinet.js");
 
   //returngin html template
   const createTweetElement = function (tweetObject) {
-    const $tweet = $(`<article>
+    const $tweet = $(`<article class="tweet-container-item">
     <header class="newtonheader">
     <div class="username"><img src=${tweetObject.user.avatars}>
     ${tweetObject.user.name}</div>
@@ -12,7 +14,7 @@ $(document).ready(function () {
     </header>
     <p id="tweet-text" >${tweetObject.content.text}</p>
     <footer class="tweet-footer">
-    <div>${tweetObject.created_at}</div>
+    <div>${timeago.format(tweetObject.created_at)}</div>
     <div><i class="fa-solid fa-flag icon"></i><i class="fa-solid fa-retweet icon"></i><i
     class="fa-solid fa-heart icon"></i>
     </div>
