@@ -1,8 +1,5 @@
-
 $(document).ready(function () {
-
   console.log("jquery ready at clinet.js");
-
   //returngin html template
   const createTweetElement = function (tweetObject) {
     const $tweet = $(`<article class="tweet-container-item">
@@ -22,6 +19,8 @@ $(document).ready(function () {
     </article>`);
     return $tweet;
   };
+
+
   //loops through the tweets and calls createTweetElement to append the result to ".tweet-container " class
   const renderTweets = function (tweetsArray) {
     for (let tweet of tweetsArray) {
@@ -31,16 +30,24 @@ $(document).ready(function () {
   };
   //Ajax POST request from .tweetform
   const $tweetForm = $(".tweetform");
-
   $tweetForm.submit(function (event) {
     event.preventDefault();
-    $.ajax("http://localhost:8080/tweets/", {
-      method: "POST",
-      data: $(this).serialize(),
-    }).then(() => {
-      console.log("Tweet Submitted!");
-    });
+    const tweettext = $("#tweet-text").val()
+    console.log(tweettext)
+    if (tweettext === null || tweettext === "") {
+      alert("Your tweet is empty!")
+    } else if (tweettext.length > 140) {
+      alert("Your tweet is too long!")
+    } else {
+      $.ajax("http://localhost:8080/tweets/", {
+        method: "POST",
+        data: $(this).serialize(),
+      }).then(() => {
+        console.log("Tweet Submitted!", $(this).serialize());
+      });
+    }
   });
+
   // Ajax GET request
   const loadtweets = function () {
     $.ajax("/tweets", { method: "GET", success: renderTweets }).then(() => {
@@ -49,6 +56,8 @@ $(document).ready(function () {
   };
 
   loadtweets();
+
+
 });
 
 /*$.ajax({
