@@ -1,7 +1,6 @@
-
 $(document).ready(function () {
-  $("#empty").hide()
-  $("#long").hide()
+  $("#empty").hide();
+  $("#long").hide();
   const escape = function (str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
@@ -43,32 +42,31 @@ $(document).ready(function () {
     const tweettext = $("#tweet-text").val();
 
     if (tweettext === null || tweettext === "") {
-      $("#empty").slideDown()
-
+      $("#empty").slideDown();
+      $("#long").slideUp();
     } else if (tweettext.length > 140) {
-      $("#long").slideDown()
-
+      $("#long").slideDown();
+      $("#empty").slideUp();
     } else {
-      $("#empty").hide()
-      $("#long").hide()
+      $("#empty").slideUp();
+      $("#long").slideUp();
 
       $.ajax("http://localhost:8080/tweets/", {
         method: "POST",
         data: $(this).serialize(),
       }).then(() => {
         console.log("Tweet Submitted!", $(this).serialize());
-        loadtweets()
+        loadtweets();
       });
     }
   });
   // Ajax GET request
   const loadtweets = function () {
     $.ajax("/tweets", { method: "GET" }).then((arr) => {
-      console.log("GET success!")
-      $('.tweet-container').empty()
+      console.log("GET success!");
+      $(".tweet-container").empty();
       renderTweets(arr);
     });
   };
-  loadtweets()
-
+  loadtweets();
 });

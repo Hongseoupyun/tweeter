@@ -1,0 +1,39 @@
+/*when screen is bigger than 1024px*/
+@media screen and (min-width: 768px) {
+  .section-1 {
+    display: flex;
+    flex-direction: row;
+  }
+  .new-tweet {
+    width: 100%;
+  }
+  #tweet-text {
+    display: flex;
+    font-family: SourceSansPro, sans-serif;
+    color: gray;
+    width: 100%;
+  }
+
+  .container {
+    height: auto;
+    margin-top: 120px;
+  }
+  .img {
+    display: flex;
+    height: 400px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fcfcfc;
+    background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
+    z-index: -1;
+    margin-top: 200px;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  .Name {
+    font-size: medium;
+    display: flex;
+  }
+}
