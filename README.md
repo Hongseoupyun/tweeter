@@ -1,18 +1,23 @@
 # Tweeter Project
 
-Tweeter is a simple, single-page Twitter clone.
+A simple single-page AJAX-based Twitter clone that uses jQuery, HTML5 and CSS3.
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express back-end skills.
+## Final Product
 
-## Getting Started
+!["Web page"](https://github.com/Hongseoupyun/tinyapp/blob/master/docs/:login_logging%20in.png?raw=true)
 
-1. [Create](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) a new repository using this repository as a template.
-2. Clone your repository onto your local device.
-3. Install dependencies using the `npm install` command.
-3. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
-4. Go to <http://localhost:8080/> in your browser.
+!["Register page to make a new accout"](https://github.com/Hongseoupyun/tinyapp/blob/master/docs/:register_creating%20account.png?raw=true)
+
+!["/urls/:shorturl page to edit the long url and navigate to it"](https://github.com/Hongseoupyun/tinyapp/blob/master/docs/:urls::shorurl_can%20edit%20the%20long%20url%20and%20navigate%20to%20it.png?raw=true)
+
+!["/urls/new/ to create url"](https://github.com/Hongseoupyun/tinyapp/blob/master/docs/:urls:new_creating%20url.png?raw=true)
+
+!["/urls to show shortened url and logged in account"](https://github.com/Hongseoupyun/tinyapp/blob/master/docs/:urls_shor%20urls%20list%20with%20logged%20in%20account.png?raw=true)
 
 ## Dependencies
 
-- Express
-- Node 5.10.x or above
+-body-parser
+-chance
+-express
+-md5
+-timeago.js
