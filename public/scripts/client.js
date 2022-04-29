@@ -1,4 +1,7 @@
+
 $(document).ready(function () {
+  $("#empty").hide()
+  $("#long").hide()
   const escape = function (str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
@@ -34,35 +37,38 @@ $(document).ready(function () {
   };
   //Ajax POST request from .tweetform
   const $tweetForm = $(".tweetform");
+
   $tweetForm.submit(function (event) {
     event.preventDefault();
     const tweettext = $("#tweet-text").val();
+
     if (tweettext === null || tweettext === "") {
-      $("#empty").toggle(function () { $("#empty").removeClass("invisible"), $("#empty").addClass("error-empty"), $("#empty").slideDown() })
+      $("#empty").slideDown()
+
     } else if (tweettext.length > 140) {
-      $("#long").toggle(function () { $("#long").removeClass("invisible"), $("#long").addClass("error-empty"), $("#long").slideDown() })
+      $("#long").slideDown()
+
     } else {
-      $("#long").toggle(function () { $("#long").removeClass("invisible"), $("#long").addClass("invisible") })
-      $("#empty").toggle(function () { $("#empty").removeClass("invisible"), $("#empty").addClass("invisible") })
+      $("#empty").hide()
+      $("#long").hide()
 
       $.ajax("http://localhost:8080/tweets/", {
         method: "POST",
         data: $(this).serialize(),
       }).then(() => {
         console.log("Tweet Submitted!", $(this).serialize());
+        loadtweets()
       });
     }
   });
-
   // Ajax GET request
   const loadtweets = function () {
-    $.ajax("/tweets", { method: "GET", success: renderTweets }).then(() => {
-      console.log("GET success!");
+    $.ajax("/tweets", { method: "GET" }).then((arr) => {
+      console.log("GET success!")
+      $('.tweet-container').empty()
+      renderTweets(arr);
     });
   };
-
-
-
-  loadtweets();
+  loadtweets()
 
 });

@@ -3,6 +3,7 @@
   flex-direction: column;
   justify-content: center;
   font-family: SourceSansPro, sans-serif;
+  margin-top: 2%;
 }
 .b {
   display: flex;
@@ -81,7 +82,7 @@ textarea {
   padding: 10px;
   margin: 20px;
 }
-.error-long {
+#long {
   padding: 5%;
   margin: 5%;
   border: 5px solid red;
@@ -92,7 +93,7 @@ textarea {
   background-color: #ffbaba;
   background-image: url("https://i.imgur.com/GnyDvKN.png");
 }
-.error-empty {
+#empty {
   padding: 5%;
   margin: 5%;
   border: 5px solid red;
@@ -106,4 +107,5 @@ textarea {
 
 .invisible {
   visibility: hidden;
+  height: 0;
 }

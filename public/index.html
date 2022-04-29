@@ -46,38 +46,39 @@
       <i class="fa-solid fa-angles-down flag"></i>
     </div>
   </nav>
+  <div class="section -1">
+    <header class="img">
+      <div>
+        <img src="/images/profile-hex.png" />
+      </div>
+      <br />
+      <div class="Name">
+        <h2>Hongseoup Yun</h2>
+      </div>
+    </header>
 
-  <header class="img">
-    <div>
-      <img src="/images/profile-hex.png" />
-    </div>
-    <br />
-    <div class="Name">
-      <h2>Hongseoup Yun</h2>
-    </div>
-  </header>
+    <!-- Page-specific (main) content here -->
+    <main class="container">
+      <section class="new-tweet">
+        <div id="long">Your Tweet Is Too Long ..!</div>
+        <div id="empty">Your Tweet Is Empty..!</div>
+        <form class="tweetform" action="/tweets" method="POST">
+          <div class="c">
+            <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+          </div>
+          <div class="b">
+            <button class="tweetbutton" type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
 
-  <!-- Page-specific (main) content here -->
-  <main class="container">
-    <section class="new-tweet">
-      <div class="invisible" id="long">Your Tweet Is Too Long ..!</div>
-      <div class="invisible" id="empty">Your Tweet Is Empty..!</div>
-      <form class="tweetform" action="/tweets" method="POST">
-        <div class="c">
-          <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
-        </div>
-        <div class="b">
-          <button class="tweetbutton" type="submit">Tweet</button>
-          <output name="counter" class="counter" for="tweet-text">140</output>
-        </div>
+          <section class="tweet-container">
 
-        <section class="tweet-container">
+          </section>
 
-        </section>
-
-      </form>
-    </section>
-  </main>
+        </form>
+      </section>
+    </main>
+  </div>
 </body>
 
 </html>
