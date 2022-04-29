@@ -1,17 +1,8 @@
-/*when screen is bigger than 1024px*/
+/*when screen is bigger than 768px*/
 @media screen and (min-width: 768px) {
   .section-1 {
     display: flex;
     flex-direction: row;
-  }
-  .new-tweet {
-    width: 100%;
-  }
-  #tweet-text {
-    display: flex;
-    font-family: SourceSansPro, sans-serif;
-    color: gray;
-    width: 100%;
   }
 
   .container {
