@@ -34,9 +34,16 @@ $(document).ready(function () {
       $(".tweet-container").prepend(result);
     }
   };
+   // Ajax GET request
+   const loadtweets = function () {
+    $.ajax("/tweets", { method: "GET" }).then((arr) => {
+      console.log("GET success!");
+      $(".tweet-container").empty();
+      renderTweets(arr);
+    });
+  };
   //Ajax POST request from .tweetform
   const $tweetForm = $(".tweetform");
-
   $tweetForm.submit(function (event) {
     event.preventDefault();
     const tweettext = $("#tweet-text").val();
@@ -60,13 +67,7 @@ $(document).ready(function () {
       });
     }
   });
-  // Ajax GET request
-  const loadtweets = function () {
-    $.ajax("/tweets", { method: "GET" }).then((arr) => {
-      console.log("GET success!");
-      $(".tweet-container").empty();
-      renderTweets(arr);
-    });
-  };
+ 
   loadtweets();
 });
+ 
