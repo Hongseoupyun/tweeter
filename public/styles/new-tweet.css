@@ -11,6 +11,7 @@
   font-family: Bungee, sans-serif;
 }
 .tweetbutton {
+  cursor: pointer;
   background-color: #4056a1;
   color: white;
 }
